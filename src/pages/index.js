@@ -13,7 +13,7 @@ export default class IndexPage extends React.Component {
         <section className="bg-blue">
           <div className="">
             <div className="p-3">
-              <h1 className="">My Photos</h1>
+              <h1 className="text-lg">My Photos</h1>
             </div>
             {posts.map(({ node: post }) => (
               <div
