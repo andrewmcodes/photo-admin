@@ -1,6 +1,6 @@
 ---
-templateKey: 'product-page'
-path: /products
+templateKey: 'photos-page'
+path: /photos
 title: Our Coffee
 image: /img/jumbotron.jpg
 heading: What we offer

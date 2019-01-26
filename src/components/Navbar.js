@@ -4,60 +4,84 @@ import { Link } from 'gatsby'
 // import logo from '../img/logo.svg'
 
 const Navbar = class extends React.Component {
-  componentDidMount() {
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(
-      document.querySelectorAll('.navbar-burger'),
-      0
-    )
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
-      // Add a click event on each of them
-      $navbarBurgers.forEach(el => {
-        el.addEventListener('click', () => {
-          // Get the target from the "data-target" attribute
-          const target = el.dataset.target
-          const $target = document.getElementById(target)
+  constructor(props) {
+    super(props)
 
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-          el.classList.toggle('is-active')
-          $target.classList.toggle('is-active')
-        })
-      })
+    this.toggleNavbar = this.toggleNavbar.bind(this)
+    this.closeNavbar = this.closeNavbar.bind(this)
+    this.state = {
+      collapsed: true,
     }
+  }
+
+  closeNavbar() {
+    if (this.state.collapsed === true) {
+      this.toggleNavbar()
+    }
+  }
+
+  toggleNavbar() {
+    const el = document.getElementById('nav')
+    el.classList.toggle('block')
+    el.classList.toggle('hidden')
   }
 
   render() {
     return (
-      <nav className="navbar" role="navigation" aria-label="main-navigation">
-        <div className="navbar-brand">
-          <Link to="/" className="navbar-item" title="Logo">
-            {/* <img src={logo} alt="" style={{ width: '88px' }} /> */}
-            <h2>Photo-Admin</h2>
-          </Link>
-          {/* Hamburger menu */}
-          <div className="navbar-burger burger" data-target="navMenu">
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-        <div id="navMenu" className="navbar-menu">
-          <div className="navbar-start">
-            <Link className="navbar-item" to="/about">
-              About
-            </Link>
-            <Link className="navbar-item" to="/products">
-              Products
-            </Link>
-            <Link className="navbar-item" to="/contact">
-              Contact
-            </Link>
-          </div>
-        </div>
+      <nav className="bg-white shadow-md z-10 absolute w-full md:mb-16">
+        <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto ">
+          <Link
+            to="/"
+            className="flex items-center no-underline text-blue p-4 md:p-8 sm:hover:text-blue antialiased"
+          >
+            <span className="font-semibold text-xl tracking-wide">
+              Andrew Mason{' '}
+            </span>{' '}
+          </Link>{' '}
+          <button
+            className="mr-4 sm:mr-8 block sm:hidden border border-blue hover:bg-blue hover:text-grey-lightest focus:bg-blue focus:text-grey-lightest flex items-center px-3 py-2 rounded text-blue"
+            onClick={this.toggleNavbar}
+          >
+            <svg
+              className="fill-current h-3 w-3"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title> Menu </title>{' '}
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>{' '}
+          </button>{' '}
+          <div
+            id="nav"
+            className="text-center hidden sm:flex sm:items-center w-full sm:w-auto"
+          >
+            <div className="text-sm font-semibold">
+              <Link
+                to="/"
+                className="antialiased block py-6 sm:hover:bg-grey-lightest sm:hover:text-blue hover:bg-blue hover:text-white sm:inline-block sm:mt-0 sm:mr-12 no-underline text-blue shadow-inner sm:shadow-none"
+                onClick={this.toggleNavbar}
+              >
+                Home{' '}
+              </Link>{' '}
+              <Link
+                to="/projects"
+                className="antialiased block sm:inline-block py-6 sm:hover:bg-grey-lightest sm:hover:text-blue hover:bg-blue hover:text-white sm:mt-0 sm:mr-12 no-underline text-blue shadow-inner sm:shadow-none"
+                onClick={this.toggleNavbar}
+              >
+                Projects{' '}
+              </Link>{' '}
+              <Link
+                to="/contact"
+                className="antialiased block sm:inline-block py-6 sm:hover:bg-grey-lightest sm:hover:text-blue hover:bg-blue hover:text-white sm:mt-0 no-underline text-blue shadow-inner sm:shadow-none sm:mr-8"
+                onClick={this.toggleNavbar}
+              >
+                Contact{' '}
+              </Link>{' '}
+            </div>{' '}
+          </div>{' '}
+        </div>{' '}
       </nav>
     )
   }
 }
-
 export default Navbar
