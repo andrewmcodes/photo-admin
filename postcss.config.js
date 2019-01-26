@@ -1,6 +1,8 @@
-const join = require('path').join
-const tailwindJS = join(__dirname, 'tailwind.js')
+var tailwindcss = require('tailwindcss');
 
 module.exports = {
-  plugins: [require('tailwindcss')(tailwindJS), require('autoprefixer')]
+  plugins: [
+    tailwindcss('./tailwind.config.js'),
+    require('autoprefixer'),
+  ]
 }
