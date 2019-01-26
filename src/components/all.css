@@ -3,3 +3,39 @@
 @tailwind components;
 
 @tailwind utilities;
+
+html {
+  @apply min-h-screen bg-grey-lighter;
+}
+
+.navbar {
+  @apply flex items-center justify-between flex-wrap bg-white shadow-md p-6;
+}
+
+.navbar-brand {
+  @apply flex items-center flex-no-shrink text-blue-dark mr-6;
+}
+
+.navbar-menu {
+  @apply w-full block justify-end;
+}
+
+.navbar-start {
+  @apply text-sm;
+}
+
+.navbar-item {
+  @apply block mt-4 text-blue-dark mr-8 no-underline;
+}
+
+@screen lg {
+  .navbar-menu {
+     @apply flex items-center w-auto;
+  }
+  .navbar-start {
+    @apply flex-grow;
+  }
+  .navbar-item {
+    @apply inline-block mt-0;
+  }
+}
