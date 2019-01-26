@@ -10,10 +10,10 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="">
+        <section className="bg-blue">
           <div className="">
             <div className="">
-              <h1 className="">Latest Stories</h1>
+              <h1 className="">My Photos</h1>
             </div>
             {posts.map(({ node: post }) => (
               <div
