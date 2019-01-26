@@ -48,18 +48,14 @@ export const ProductPageTemplate = ({
               </div>
               <div className="">
                 <div className="">
-                  <h3 className="">
-                    {heading}
-                  </h3>
+                  <h3 className="">{heading}</h3>
                   <p>{description}</p>
                 </div>
               </div>
               <Features gridItems={intro.blurbs} />
               <div className="">
                 <div className="">
-                  <h3 className="">
-                    {main.heading}
-                  </h3>
+                  <h3 className="">{main.heading}</h3>
                   <p>{main.description}</p>
                 </div>
               </div>
@@ -95,9 +91,7 @@ export const ProductPageTemplate = ({
                   })`,
                 }}
               />
-              <h2 className="">
-                {pricing.heading}
-              </h2>
+              <h2 className="">{pricing.heading}</h2>
               <p className="">{pricing.description}</p>
               <Pricing data={pricing.plans} />
             </div>

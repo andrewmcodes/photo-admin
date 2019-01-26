@@ -10,17 +10,13 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="container">
+        <section className="container mx-auto">
           <div className="w-full">
-            <div className="mx-auto text-center">
-              <h1 className="text-4xl color-blue">My Photos</h1>
+            <div className="text-center">
+              <h1 className="text-4xl text-blue my-8">My Photos</h1>
             </div>
             {posts.map(({ node: post }) => (
-              <div
-                className=""
-                style={{ border: '1px solid #333', padding: '2em 4em' }}
-                key={post.id}
-              >
+              <div className="" key={post.id}>
                 <p>
                   <Link className="" to={post.fields.slug}>
                     {post.frontmatter.title}

@@ -29,11 +29,7 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <nav
-        className="navbar"
-        role="navigation"
-        aria-label="main-navigation"
-      >
+      <nav className="navbar" role="navigation" aria-label="main-navigation">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
             {/* <img src={logo} alt="" style={{ width: '88px' }} /> */}

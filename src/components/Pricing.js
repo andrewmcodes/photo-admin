@@ -6,12 +6,8 @@ const Pricing = ({ data }) => (
     {data.map(price => (
       <div key={price.plan} className="">
         <section className="">
-          <h4 className="">
-            {price.plan}
-          </h4>
-          <h2 className="">
-            ${price.price}
-          </h2>
+          <h4 className="">{price.plan}</h4>
+          <h2 className="">${price.price}</h2>
           <p className="">{price.description}</p>
           <ul>
             {price.items.map(item => (

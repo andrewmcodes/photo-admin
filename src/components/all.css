@@ -8,6 +8,10 @@ html {
   @apply min-h-screen bg-grey-lighter;
 }
 
+p {
+  @apply leading-loose text-lg;
+}
+
 .navbar {
   @apply flex items-center justify-between flex-wrap bg-white shadow-md p-6;
 }

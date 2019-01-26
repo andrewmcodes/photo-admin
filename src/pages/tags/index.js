@@ -17,10 +17,7 @@ const TagsPage = ({
       <Helmet title={`Tags | ${title}`} />
       <div className="">
         <div className="">
-          <div
-            className=""
-            style={{ marginBottom: '6rem' }}
-          >
+          <div className="" style={{ marginBottom: '6rem' }}>
             <h1 className="">Tags</h1>
             <ul className="">
               {group.map(tag => (
