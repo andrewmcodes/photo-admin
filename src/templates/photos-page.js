@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
-import Testimonials from '../components/Testimonials'
-import Pricing from '../components/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const PhotosPageTemplate = ({
@@ -14,9 +12,7 @@ export const PhotosPageTemplate = ({
   description,
   intro,
   main,
-  testimonials,
   fullImage,
-  pricing,
 }) => (
   <section className="">
     <div className="">
@@ -80,7 +76,6 @@ export const PhotosPageTemplate = ({
                   </div>
                 </div>
               </div>
-              <Testimonials testimonials={testimonials} />
               <div
                 className=""
                 style={{
@@ -91,9 +86,6 @@ export const PhotosPageTemplate = ({
                   })`,
                 }}
               />
-              <h2 className="">{pricing.heading}</h2>
-              <p className="">{pricing.description}</p>
-              <Pricing data={pricing.plans} />
             </div>
           </div>
         </div>
